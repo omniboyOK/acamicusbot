@@ -6,8 +6,17 @@ const token = process.env.BOT_TOKEN;
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
 
+// Set response for command start
+bot.onText(/\/start/, msg => {
+  bot.sendMessage(msg.chat.id, "Welcome");
+});
+
+// Set response for command Acamica
+bot.onText(/\/acamica/, msg => {
+  bot.sendMessage(msg.chat.id , "`" + consejo + "`");
+});
+
 bot.on("message", msg => {
-  const chatId = msg.chat.id;
   const consejo = "hola";
   if (
     msg.text
@@ -16,8 +25,11 @@ bot.on("message", msg => {
       .includes("acamica")
   ) {
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, "<code>" + consejo + "</code>");
+    bot.sendMessage(msg.chat.id, "`" + consejo + "`");
   } else {
-    bot.sendMessage(chatId, "Solo puedo responder si dices la palabra mágica: acamica");
+    bot.sendMessage(
+      chatId,
+      "Solo puedo responder si dices la palabra mágica: acamica"
+    );
   }
 });
