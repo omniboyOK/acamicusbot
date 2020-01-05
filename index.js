@@ -29,11 +29,6 @@ bot.on("message", msg => {
   ) {
     // send a message to the chat acknowledging receipt of their message
     bot.sendMessage(msg.chat.id, "<code>" + consejo + "</code>", {parse_mode : "HTML"});
-  } else {
-    bot.sendMessage(
-      chatId,
-      "Solo puedo responder si dices la palabra mágica: acamica"
-    );
   }
 });
 
