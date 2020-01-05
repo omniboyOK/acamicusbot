@@ -13,7 +13,7 @@ bot.onText(/\/start/, msg => {
 
 // Set response for command Acamica
 bot.onText(/\/acamica/, msg => {
-  bot.sendMessage(msg.chat.id , "`" + consejo + "`");
+  bot.sendMessage(msg.chat.id , "<code>" + consejo + "</code>", {parse_mode : "HTML"});
 });
 
 bot.on("message", msg => {
@@ -25,7 +25,7 @@ bot.on("message", msg => {
       .includes("acamica")
   ) {
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(msg.chat.id, "`" + consejo + "`");
+    bot.sendMessage(msg.chat.id, "<code>" + consejo + "</code>", {parse_mode : "HTML"});
   } else {
     bot.sendMessage(
       chatId,
