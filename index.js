@@ -1,3 +1,4 @@
+require('dotenv').config()
 const TelegramBot = require("node-telegram-bot-api");
 
 // replace the value below with the Telegram token you receive from @BotFather
@@ -13,6 +14,7 @@ bot.onText(/\/start/, msg => {
 
 // Set response for command Acamica
 bot.onText(/\/acamica/, msg => {
+  const consejo= 'chau'
   bot.sendMessage(msg.chat.id , "<code>" + consejo + "</code>", {parse_mode : "HTML"});
 });
 
