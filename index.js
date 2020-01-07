@@ -4,7 +4,6 @@ const _ = require('lodash');
 // stored messages that can be send by the bot
 let data = require('./messages.json');
 const consejos = data.mensajes;
-console.log(consejos)
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.BOT_TOKEN;
@@ -20,15 +19,22 @@ bot.onText(/\/start/, msg => {
 // Set response for command Acamica
 bot.on("message", msg => {
   const consejo = _.sample(consejos);
-  console.log(consejo)
+  // Set response if acamica is named
   if (
     msg.text
       .toString()
       .toLowerCase()
       .includes("acamica")
   ) {
-    // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(msg.chat.id, "<code>" + consejo + "</code>", {parse_mode : "HTML"});
+    // send a recomendation
+    bot.sendMessage(msg.chat.id, "<code>" + consejo + "</code> \u{1F60E}", {parse_mode : "HTML"});
+  } else if (
+    msg.text
+      .toString()
+      .toLowerCase().endsWith('hola')
+  ) {
+    // reply to 'hi' message in silence
+    bot.sendMessage(msg.chat.id, `<code>Buenas ${msg.chat.first_name} </code> \u{1F4BB}`, {parse_mode : "HTML", disable_notification: true , reply_to_message_id: msg.id});
   }
 });
 
