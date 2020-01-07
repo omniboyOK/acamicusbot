@@ -9,7 +9,7 @@ const consejos = data.mensajes;
 const token = process.env.BOT_TOKEN;
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, { polling: true , webHook: { port: process.env.PORT || 8080 }});
 
 // Set response for command start
 bot.onText(/\/start/, msg => {
