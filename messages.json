@@ -10,6 +10,9 @@
         "Recomiendan los/as Pro: las variables cortas como 'a', 'b' o 'c' ahorran mucho codigo!",
         "Recomiendan los/as Pro: comparti las API key con tus compañeros para generar confianza",
         "Recomiendan los/as Pro: crea un archivo html por cada ruta que declares, de esa forma veran que trabajas mucho",
-        "Recomiendan los/as Pro: las bases de datos sin contraseñas son más rápidas de acceder!"
+        "Recomiendan los/as Pro: las bases de datos sin contraseñas son más rápidas de acceder!",
+        "Recomiendan los/as Pro: Usar import en NodeJs en vez de require('')",
+        "Recomiendan los/as Pro: Enviar un msj a Sergio Ojeda y a Julian(no me acuerdo que) ante cualquier duda con el deco del cable."
+        
     ]
 }
