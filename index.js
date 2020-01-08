@@ -7,9 +7,17 @@ const consejos = data.mensajes;
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.BOT_TOKEN;
+const url = process.env.MY_URL;
+const port = process.env.PORT;
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, {
+  webHook: {
+    port: port
+  }
+});
+
+bot.setWebHook(`${url}/bot${token}`);
 
 // Set response for command start
 bot.onText(/\/start/, msg => {
@@ -52,4 +60,6 @@ bot.on("message", msg => {
 });
 
 // for debugging errors
-bot.on("polling_error", err => console.log(err));
+bot.on("webhook_error", error => {
+  console.log(error.code); // => 'EPARSE'
+});
