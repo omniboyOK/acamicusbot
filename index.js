@@ -41,27 +41,13 @@ bot.on("message", msg => {
   var chatId = msg.chat.id;
   var messageId = msg.message_id;
   var user = msg.from.first_name;
-  // Set response in case of null or undefined
-  if(msg == null) {
-    bot.sendMessage(chatId, "No pude leer tu mensaje");
-  }
   // Set response if acamica is named
-  if (
-    msg.text
-      .toString()
-      .toLowerCase()
-      .includes("acamica")
-  ) {
+  if (msg.text && msg.text.toLowerCase().includes("acamica")) {
     // send a recomendation
     bot.sendMessage(chatId, "<code>" + consejo + "</code> \u{1F60E}", {
       parse_mode: "HTML"
     });
-  } else if (
-    msg.text
-      .toString()
-      .toLowerCase()
-      .endsWith("hola")
-  ) {
+  } else if (msg.text && msg.text.toLowerCase().endsWith("hola")) {
     // reply to 'hi' message in silence
     bot.sendMessage(chatId, `<code>Buenas ${user} </code> \u{1F4BB}`, {
       parse_mode: "HTML",
