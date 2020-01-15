@@ -27,12 +27,24 @@ bot.onText(/\/start/, msg => {
   );
 });
 
+// Set response for command start
+bot.onText(/\/play/, msg => {
+  bot.sendMessage(
+    msg.chat.id,
+    "Bienvenido, escribe acamica o agregame un grupo y respondere cuando hablen de mi"
+  );
+});
+
 // Set response for command Acamica
 bot.on("message", msg => {
   const consejo = _.sample(consejos);
   var chatId = msg.chat.id;
   var messageId = msg.message_id;
   var user = msg.from.first_name;
+  // Set response in case of null or undefined
+  if(msg == null) {
+    bot.sendMessage(chatId, "No pude leer tu mensaje");
+  }
   // Set response if acamica is named
   if (
     msg.text
