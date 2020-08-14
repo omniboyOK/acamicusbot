@@ -9,8 +9,9 @@
         "Recomiendan los/as Pro: solo hace falta jquery y muchas ganas para tener tu fintech",
         "Recomiendan los/as Pro: las variables cortas como 'a', 'b' o 'c' ahorran mucho codigo!",
         "Recomiendan los/as Pro: comparti las API key con tus compañeros para generar confianza",
-        "Recomiendan los/as Pro: crea un archivo html por cada ruta que declares, de esa forma veran que trabajas mucho",
+        "Recomiendan los/as Pro: centrar etiquetas <div> con la propiedad margin",
         "Recomiendan los/as Pro: las bases de datos sin contraseñas son más rápidas de acceder!",
-        "Recomiendan los/as Pro: Te enseñamos a hacer PullRequest pero enviale un a Sergio Ojeda antes."
+        "Recomiendan los/as Pro: no olvides guardar el repo de la empresa en google drive",
+        "Recomiendan los/as Pro: Hacer un UPDATE sin un WHERE por la mañana levanta el animo del equipo"
     ]
 }
